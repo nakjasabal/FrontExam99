@@ -8,18 +8,19 @@
 		window.open("openChild2nd.html", "child2",
 			"width=300,height=300,left=300,top=0");
 	}
+	
 	/*
 	JS에서 CSS속성 제어하기
-		: CSS 속성중 -(하이픈)이 있는경우 제거하고 다음 첫 문자를 
+		: CSS 속성중 -(하이픈)이 있는 경우 이를 제거하고 다음 첫 문자를
 		대문자로 변경한다. 하이픈이 없는 경우는 원형 그대로 사용하면된다. 
 		Ex) font-size => fontSize
 			color => color
 	*/
     var openerText = function(){
+		//부모창의 버튼의 타입을 text로 배경색은 빨간색으로 변경한다. 
         opener.document.getElementById("btnFirst").type = "text";
         opener.document.getElementById("btnFirst").style.backgroundColor = "red";
-    }
-	 
+    }	 
     var openerButton = function(){
         opener.document.getElementById("btnFirst").type = "button";
         opener.document.getElementById("btnFirst").style.backgroundColor = "blue";
