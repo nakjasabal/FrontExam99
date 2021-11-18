@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J15Event07.html</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J15Event07.html</title>
 
-    <script>
-    function fnScale(flag){
-		//id가 title인 엘리먼트를 가져온다. 
-		var title = document.getElementById("title");		 
-		//태그명이 div인 엘리먼트 중 첫번째를 얻어온다.
-        var div = document.getElementsByTagName("div")[0];
-        
-        if(flag==1){//마우스 down(클릭)시...		 
-            title.innerHTML = "<big>mousedown 이벤트 발생</big>";
-			div.style.backgroundColor = "green";	
-			/*
-			div박스의 크기를 가져와서 숫자로 변경한 후 2를 곱해준다. 
-			그리고 사이즈 설정을 위해 px단위를 붙여서 완성한다. 
-			px단위가 생략되면 사이즈 설정이 되지 않으므로 주의해야한다. 
-			※ parseInt()를 통해 문자를 숫자로 변경하는 경우 숫자와 문자가 
-			섞여있으면 숫자까지만 변경된다. 
-			*/	 
-			console.log("현재크기", div.style.width, div.style.height);
-            div.style.width = parseInt(div.style.width)*2 +"px";
-			div.style.height = parseInt(div.style.height)*2 +"px";		 
-        }
-        else if(flag==2){//마우스 up(땠을때)시...		 
-            title.innerHTML = "mouseup 이벤트 발생";
-            div.style.backgroundColor = "red";
-            div.style.width = "100px";
-            div.style.height = "100px";
-        }
-    }
-    </script>
+<script>
+function fnScale(flag){
+	//id가 title인 엘리먼트를 가져온다. 
+	var title = document.getElementById("title");		 
+	//태그명이 div인 엘리먼트 중 첫번째를 얻어온다.
+	var div = document.getElementsByTagName("div")[0];
+	
+	if(flag==1){//마우스 down(클릭)시...		 
+		title.innerHTML = "<big>mousedown 이벤트 발생</big>";
+		div.style.backgroundColor = "green";	
+		/*
+		div박스의 크기를 가져와서 숫자로 변경한 후 2를 곱해준다. 
+		그리고 사이즈 설정을 위해 px단위를 붙여서 완성한다. 
+		px단위가 생략되면 사이즈 설정이 되지 않으므로 주의해야한다. 
+		※ parseInt()를 통해 문자를 숫자로 변경하는 경우 숫자와 문자가 
+		섞여있으면 숫자까지만 변경된다. 
+		*/	 
+		console.log("현재크기", div.style.width, div.style.height);
+		div.style.width = parseInt(div.style.width)*2 +"px";
+		div.style.height = parseInt(div.style.height)*2 +"px";		 
+	}
+	else if(flag==2){//마우스 up(땠을때)시...		 
+		title.innerHTML = "mouseup 이벤트 발생";
+		div.style.backgroundColor = "red";
+		div.style.width = "100px";
+		div.style.height = "100px";
+	}
+}
+</script>
 </head>
 <body>
     <h2>마우스 이벤트</h2>
@@ -165,8 +165,7 @@
     <h3>이미지에 마우스 이벤트 적용하기</h3>
 	<img src="./images/1.jpg" alt="하트" style="width:225px;height:313px;"
 		onmouseover="mouseoverFunc(this);" 
-		onmouseout="mouseoutFunc();"
-		/>
+		onmouseout="mouseoutFunc();" />
 
 </body>
 </html>

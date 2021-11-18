@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J15Event05.html</title>
-    <script>
-        /*
-        키보드 이벤트
-        keydown : 키보드를 누를때 발생하는 이벤트. shift와 같은 특수키도
-            인식할 수 있다. 한글인 경우도 인식한다. 
-        keyup : 키보드를 눌렀다가 땠을때 발생하는 이벤트. keydown과 인식하는
-            키는 동일하다. 
-        keypress : keydown과 동일한 이벤트이지만 shift와 같은 특수키는 
-            인식하지 못하고, 문자키만 인식한다. 단, 한글인 경우 인식하지 않는다.
-        */
-        var count = 0;
-        function fnKeyHandler(flag){
-            count++;
-            var spanTag = document.getElementById("span");
-            switch(flag){
-            case 1:
-                spanTag.innerHTML = "keydown이벤트발생"+ count;
-                break;
-            case 2:
-                spanTag.innerHTML = "keypress이벤트발생"+ count;
-                break;
-            case 3:
-                spanTag.innerHTML = "keyup이벤트발생"+ count;
-                break;
-            }		
-        }
-        function FnKeyEvent(){
-            var span = document.getElementById("keySpan");
-            //키보드 이벤트 발생시 눌러진 키보드의 코드값을 반환한다. 
-            var keycode = event.keyCode;
-            //얻어온 키코드 값을 span태그에 삽입한다. 
-            span.innerHTML = keycode;
-            //지정한 키보드를 웹페이지에서 막아야 할때 리스너쪽으로 false를 반환한다. 
-            if(keycode==116 || keycode==8){
-                alert("해당 문서에서는 F5, Backspace는 사용할 수 없습니다.");
-                return false;
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J15Event05.html</title>
+<script>
+/*
+키보드 이벤트
+keydown : 키보드를 누를때 발생하는 이벤트. shift와 같은 특수키도
+    인식할 수 있다. 한글인 경우도 인식한다. 
+keyup : 키보드를 눌렀다가 땠을때 발생하는 이벤트. keydown과 인식하는
+    키는 동일하다. 
+keypress : keydown과 동일한 이벤트이지만 shift와 같은 특수키는 
+    인식하지 못하고, 문자키만 인식한다. 단, 한글인 경우 인식하지 않는다.
+*/
+var count = 0;
+function fnKeyHandler(flag){
+    count++;
+    var spanTag = document.getElementById("span");
+    switch(flag){
+    case 1:
+        spanTag.innerHTML = "keydown이벤트발생"+ count;
+        break;
+    case 2:
+        spanTag.innerHTML = "keypress이벤트발생"+ count;
+        break;
+    case 3:
+        spanTag.innerHTML = "keyup이벤트발생"+ count;
+        break;
+    }		
+}
+function FnKeyEvent(){
+    var span = document.getElementById("keySpan");
+    //키보드 이벤트 발생시 눌러진 키보드의 코드값을 반환한다. 
+    var keycode = event.keyCode;
+    //얻어온 키코드 값을 span태그에 삽입한다. 
+    span.innerHTML = keycode;
+    //지정한 키보드를 웹페이지에서 막아야 할때 리스너쪽으로 false를 반환한다. 
+    if(keycode==116 || keycode==8){
+        alert("해당 문서에서는 F5, Backspace는 사용할 수 없습니다.");
+        return false;
+    }
+}
+</script>
 </head>
 <body>
     <h2>키보드 이벤트</h2>
