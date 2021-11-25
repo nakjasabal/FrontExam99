@@ -12,6 +12,7 @@
             $.ajax({
                 url : 'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson',
                 type : 'get',		
+                contentType : "text/html;charset:utf-8",
                 /*
                 serviceKey=jk%2Fiz%2FtgJJf08ve9heFmj6X6zKfWBjbGuq131IJPQwLOlkH5EehnPtg7GjQ74KtY5plO2zYm9SDjK8rJY8RbFg%3D%3D
                 &pageNo=1
@@ -20,24 +21,30 @@
                 &endCreateDt=20201125
                 */
                 data : {
-                    serviceKey : 'jk%2Fiz%2FtgJJf08ve9heFmj6X6zKfWBjbGuq131IJPQwLOlkH5EehnPtg7GjQ74KtY5plO2zYm9SDjK8rJY8RbFg%3D%3D',
-                    //serviceKey : 'jk/iz/tgJJf08ve9heFmj6X6zKfWBjbGuq131IJPQwLOlkH5EehnPtg7GjQ74KtY5plO2zYm9SDjK8rJY8RbFg==',
+                    //serviceKey : 'jk%2Fiz%2FtgJJf08ve9heFmj6X6zKfWBjbGuq131IJPQwLOlkH5EehnPtg7GjQ74KtY5plO2zYm9SDjK8rJY8RbFg%3D%3D',
+                    serviceKey : 'jk/iz/tgJJf08ve9heFmj6X6zKfWBjbGuq131IJPQwLOlkH5EehnPtg7GjQ74KtY5plO2zYm9SDjK8rJY8RbFg==',
                     pageNo : 1,
                     numOfRows : 10,
                     startCreateDt : '20201115', 
                     endCreateDt : '20201125' 
                 },                
-                dataType : "xml",
-                contentType : "text/html;charset:utf-8",
+                dataType : "jsonp",
                 success : function(res){
-                    $('data').html(res);
+                    //$('#data').html(res);
+                    console.log('success', 'res');
                 },		 
                 error : function(err){
-                    $('data').html(err);
-                }
+                    //$('#data').html(err);
+                    console.log(err);
+                    console.log('error', err.status, err.statusText);
+                }, 
+                jsonpCallback: "myCallback"
             });		
         });
     });
+    function myCallback(a){
+        console.log(a);
+    }
     </script>
 </head>
 <body>
@@ -45,3 +52,11 @@
     <button id="btn">코로나데이터</button>
 </body>
 </html>
+<!-- 
+
+https://ddil-ddil.tistory.com/29
+https://tonyne.jeju.onl/2016/11/30/cors-server-side-solution-filter/
+
+https://oingdaddy.tistory.com/4
+
+-->
